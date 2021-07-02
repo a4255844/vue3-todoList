@@ -1,0 +1,13 @@
+.todo-container {
+  width: 590px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+ul,
+input {
+  margin: 0;
+  padding: 0;
+}

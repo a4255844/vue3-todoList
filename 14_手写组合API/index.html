@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reactive 和 shallowReactive</title>
+  <script src="./index.js"></script>
+</head>
+<body>
+   <script>
+      const user1 = shallowReactive({
+        name:'小明',
+        age : 18,
+        car:{
+          name:'奔驰',
+          color:'red'
+        }
+      })
+      // user1.name = '小花'
+      // user1.car.color = 'blue'
+      // delete user1.age
+      const user2 = reactive({
+        name:'小黑',
+        age : 19,
+        car:{
+          name:'宝马',
+          color:'heise'
+        }
+      })
+      // user2.name = '小孩'
+      // user2.car.name="奥迪"
+      // delete user2.car.color
+      console.log( reactive({
+        name:'小黑',
+        age : 19,
+        car:{
+          name:'宝马',
+          color:'heise'
+        }
+      }));
+
+      const ref1 = shallowRef({
+        name:'小黑',
+        age : 19,
+        car:{
+          name:'宝马',
+          color:'heise'
+        }
+      })
+      // console.log(ref1.value);
+      // ref1.value.name = '小吧'
+      const ref2 =ref({
+        name:'小黑',
+        age : 19,
+        car:{
+          name:'宝马',
+          color:'heise'
+        }
+      })
+      // console.log(ref2.value);
+      ref2.value.name = '小花'
+      // ref2.value.car= '='
+      // console.log(ref2);
+      const readonly1 = shallowReadonly({
+        name:'小明',
+        car:['奔驰','宝马']
+      })
+      // readonly1.name += '=' //不可更改
+      // console.log(readonly1.name);  //可读取
+      // readonly1.car[0] = '奥迪' //可以修改深层数据
+      // delete readonly1.car  //不可删除外层数据
+      // delete readonly1.car[0]   // 可删除深层数据
+      // console.log(readonly1);  
+      const readonly2 = readonly({
+        name:'小明',
+        car:['奔驰','宝马']
+      }) 
+      // readonly2.car[0] += '=' //可读取,不可更改
+      // readonly2.name = '小黑'  //可读取,不可更改
+      // console.log(readonly2); 
+      // delete readonly2.car  //不可删除
+      // delete readonly2.car[0]  //不可删除
+
+      console.log(isRef(ref({})));
+      console.log(isReactive(reactive({})));
+      console.log(isReadonly(readonly({})));
+      console.log(isProxy(reactive({})));
+      console.log(isProxy(readonly({})));
+
+      console.log(isReactive(readonly({})));
+
+   </script>
+</body>
+</html>
