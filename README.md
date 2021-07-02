@@ -11,10 +11,11 @@
         通过Reflect(反射):动态对被代理对象的相应属性进行特定的操作
 
 # Vue2和Vue3的对比
-  Vue3支持大多数Vue2的特性
-  Vue3中设计了一套强大的组合API代替了Vue2中的option API, 复用性更强
-  更好的支持了TS
-  最主要: Vue3中使用了Proxy配合Reflect代替了Vue2中Object.defineProperty()方法实现数据的响应式(数据代理)
-  重写了虚拟DOM,速度更快
-  新的组件:Fragment(片段) / Teleport(瞬移) / Suspense(不确定)
-  设计了一个新的脚手架工具, vite
+  对比
+      Vue3支持大多数Vue2的特性
+      Vue3中设计了一套强大的组合API代替了Vue2中的option API, 复用性更强
+      更好的支持了TS
+      最主要: Vue3中使用了Proxy配合Reflect代替了Vue2中Object.defineProperty()方法实现数据的响应式(数据代理)
+      重写了虚拟DOM,速度更快
+      新的组件:Fragment(片段) / Teleport(瞬移) / Suspense(不确定)
+      设计了一个新的脚手架工具, vite
