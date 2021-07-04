@@ -13,7 +13,9 @@
 </template>
 
 <script lang="ts">
-/* defineComponent函数,目的是定义一个组件,内部可以传入一个配置对象 */
+/* defineComponent函数,目的是定义一个组件,内部可以传入一个配置对象 
+   他可以让组件更好的兼容ts,并且提示语法
+*/
 import { defineComponent, reactive, ref } from "vue";
 
 export default defineComponent({
@@ -61,11 +63,12 @@ export default defineComponent({
       ref内部:通过给value属性添加getter/setter来实现对数据的劫持
       reactive内部: 通过使用Proxy来实现对对象内部所有数据的劫持,并通过Reflect操作对象内部数据
       ref的数据操作:在js中要.value,在模板中不需要(内部解析模板时会自动添加.value)
+      reactive数据的响应式:如果把对象的属性单独取出来使用(赋值给变量),那么他将失去响应式,需要配合toRef来重新获得响应式
     */
     return {
       count,
-      updateCount,
       user,
+      updateCount,
       updateUser,
     };
   },

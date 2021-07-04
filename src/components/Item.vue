@@ -21,7 +21,7 @@ export default defineComponent({
   props:{
     todo:{
       type:Object as ()=>Todo, //指定接口
-      // required:true
+      required:true
     },
     index:{
       type : Number
@@ -53,7 +53,7 @@ export default defineComponent({
     }
    const isComplete =  computed({
      get() {
-       return props.todo?.isCompleted
+       return props.todo.isCompleted
      },
      set(val) {
       //  props.todo?.isCompleted = val
