@@ -61,6 +61,12 @@ export default defineComponent({
   watch([()=>user.firstName, ()=>user.lastName, fullName3],()=>{
     console.log('===');
   })
+  
+  // watch 如果监视一个reactive对象, 他的newVal和oldVal都输出的是最新的值
+  // 并且深度监视配置会失效, 深度监视效果始终存在
+  watch(user, (newVal, oldVal) => {  
+    console.log('user变化了', newVal, oldVal)
+  })
 
 
   
